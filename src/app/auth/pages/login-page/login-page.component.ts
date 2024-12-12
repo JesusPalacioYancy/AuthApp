@@ -15,14 +15,14 @@ export class LoginPageComponent {
   private router = inject( Router ); 
 
 
-  public myForm: FormGroup = this.fb.group({
+  public loginForm: FormGroup = this.fb.group({
     email: ['',[ Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
   });
 
 
   login(){
-    const {email, password} = this.myForm.value;
+    const {email, password} = this.loginForm.value;
 
     this.authService.login(email, password)
       .subscribe( {

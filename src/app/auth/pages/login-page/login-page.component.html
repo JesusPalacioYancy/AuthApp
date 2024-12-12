@@ -1,6 +1,6 @@
 <form class="login100-form"
       autocomplete="off"
-      [formGroup]="myForm"
+      [formGroup]="loginForm"
       (ngSubmit)="login()"
       >
 
@@ -34,7 +34,7 @@
         <div class="wrap-login100-form-btn">
             <div class="login100-form-bgbtn"></div>
             <button class="login100-form-btn"
-                    [disabled]="myForm.invalid"
+                    [disabled]="loginForm.invalid"
                     type="submit">
                 Login
             </button>
