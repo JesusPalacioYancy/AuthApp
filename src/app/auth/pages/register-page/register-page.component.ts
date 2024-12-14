@@ -30,8 +30,9 @@ export class RegisterPageComponent {
           Swal.fire('Saved', 'Usurio Reguistrado', 'success')
           this.router.navigateByUrl('/auth/login');
         },
-        error: (message) => {
-          Swal.fire('Error', message, 'error')
+        error: (err) => {
+          const errorMensage = Array.isArray(err) ? err.join(', ') : err
+          Swal.fire('Error', errorMensage, 'error')
         }
       });
   };
